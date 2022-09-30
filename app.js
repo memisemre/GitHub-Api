@@ -3,10 +3,16 @@ function dataCheck (){
     .then(response=>response.json())
     .then(function(data){
         for(const [key,value] of Object.entries(data)){
-            document.querySelector('.repo-area').innerHTML += `<div class="repo-container">
-            <h3 class="repo-name"> ${value.name}</h3>
-            <a href="${value.html_url}" target="_blank" class="link">Click</a>
-            <a href="https://memisemre.github.io/${value.name}/" target="_blank" class="link">Page</a>
+            document.querySelector('.repo-container').innerHTML += `<div class="repo-area">
+            <h1>${value.name}</h1>
+            <div class="links">
+                <div class="github-link">
+                    <a href="${value.html_url}" target="_blank"">GitHub</a>
+                </div>
+                <div class="page-link">
+                    <a href="https://memisemre.github.io/${value.name}/" target="_blank">Page Link</a>
+                </div>
+             </div>
         </div>`
         }
     })
