@@ -1,8 +1,9 @@
 # GitHub Api
 ## Change Log
 #### v1.1  
---Change the Design.
 ---
+-- Project created and uploaded to GitHub.
 #### v1.
+---
 -- Project created and uploaded to GitHub.
 
