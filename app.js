@@ -1,16 +1,13 @@
 function dataCheck (){
     let data = fetch("https://api.github.com/users/memisemre/repos")
     .then(response=>response.json())
-    .then(function(data){
+    .then((data)=>{
         for(const [key,value] of Object.entries(data)){
             function commitCheck(){
                 let commits = fetch("https://api.github.com/repos/memisemre/GitHub-Api/commits")
                 .then(res=>res.json())
-                .then(function(res){
-                    console.log(res)
+                .then((res)=>{
                     const [commitKey,commitValue] = Object.entries(res)
-                    console.log(commitValue)
-                    console.log(commitValue[1].html_url)
                     document.querySelector('.repo-areas').innerHTML += `<div class="repo-area">
                     <h1>${value.name}</h1>
                     <div class="links">
