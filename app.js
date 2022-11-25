@@ -8,17 +8,17 @@ function dataCheck (){
                 .then(res=>res.json())
                 .then((res)=>{
                     const [commitKey,commitValue] = Object.entries(res)
-                    document.querySelector('.repo-areas').innerHTML += `<div class="repo-area">
-                    <h1>${value.name}</h1>
-                    <div class="links">
-                        <div class="github-link">
-                            <a href="${value.html_url}" target="_blank" >GitHub</a>
+                    document.querySelector('.repo-cards-area').innerHTML += `<div class="repo-card">
+                    <h1 class="repo-name">${value.name}</h1>
+                    <div class="github-links d-flex">
+                        <div class="github">
+                            <a href="${value.html_url}" target="_blank"><img src="./img/github-logo.png" alt=""></a>
+                        </div>   
+                        <div class="github-page">
+                            <a href="https://memisemre.github.io/${value.name}/" target="_blank"><img src="./img/page.png" alt=""></a>
                         </div>
-                        <div class="page-link">
-                            <a href="https://memisemre.github.io/${value.name}/" target="_blank" >GitHub Page</a>
-                        </div>
-                        <div class="latest-commit">
-                            <a href="${commitValue[1].html_url}" target="_blank" >Latest Commit's</a>
+                        <div class="github-latest-commit">
+                            <a href="${commitValue[1].html_url}" target="_blank"> <img src="./img/commit-git.png" alt=""></a>
                         </div>
                     </div>
                 </div>`
